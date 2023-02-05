@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ezSign.MainWindow"
+        Title="ezSign">
+	<WrapPanel>
+		<StackPanel>
+			<TextBlock>easyroam offboarding signer</TextBlock>
+			<WrapPanel>
+				<Button Margin="5 10 10 5" Click="BrowseCertificate">Select signing certificate</Button>
+				<TextBlock Margin="0 10 10 0" Name="certpath" Text="{Binding Path=CertificatePath}"></TextBlock>
+			</WrapPanel>
+			<WrapPanel>
+				<TextBlock Margin="0 10 0 0">Certificate Password: </TextBlock>
+				<TextBox Watermark="Password" PasswordChar="*" Margin="5 5 0 0" Width="250" TextWrapping="Wrap" Text="{Binding Path=Password}"></TextBox>
+			</WrapPanel>
+			<WrapPanel>
+				<Button Margin="5 10 10 5" Click="BrowseXML">Select XML offboarding file</Button>
+				<TextBlock Margin="0 10 10 0" Name="xmlpath" Text="{Binding Path=XMLPath}"></TextBlock>
+			</WrapPanel>
+			<WrapPanel>
+				<Button Margin="5 10 10 5" Click="SignXML">Sign!</Button>
+			</WrapPanel>
+		</StackPanel>
+		<WrapPanel>
+			<TextBlock>Status: </TextBlock>
+			<TextBlock Text="{Binding Path=Status}"></TextBlock>
+		</WrapPanel>
+	</WrapPanel>
+</Window>
